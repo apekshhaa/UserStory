@@ -28,4 +28,9 @@ def normalize_data(data):
         else x
     )
 
+    # Data type conversions
+    df["age"] = df["age"].astype(int)
+    df["years_of_experience"] = df["years_of_experience"].astype(int)
+    df["salary"] = df["salary"].astype(int)
+
     return df

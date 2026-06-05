@@ -31,7 +31,9 @@ class TestEmployeeData(unittest.TestCase):
             "email",
             "phone",
             "job_title",
-            "years_of_experience"
+            "years_of_experience",
+            "age",
+            "salary"
         ]
 
         for field in expected_fields:
@@ -46,7 +48,9 @@ class TestEmployeeData(unittest.TestCase):
                 "email": "john@example.com",
                 "phone": "12345x678",
                 "job_title": "Developer",
-                "years_of_experience": 2
+                "years_of_experience": 2,
+                "age": 25,
+                "salary": 50000
             }
         ]
 
