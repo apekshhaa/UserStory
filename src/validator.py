@@ -11,7 +11,6 @@ REQUIRED_COLUMNS = [
 def validate_excel(file_path):
     try:
         df = pd.read_excel(file_path)
-        print(df.columns.tolist())
         print("Excel file loaded successfully")
         print(f"Rows: {len(df)}")
         print(f"Columns: {len(df.columns)}")
