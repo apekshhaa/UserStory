@@ -1,21 +1,18 @@
 import pandas as pd
 
 REQUIRED_COLUMNS = [
-    "User Id",
-    "First Name",
-    "Last Name",
-    "Sex",
-    "Email",
-    "Phone",
-    "Job Title"
+    "EEID",
+    "Full Name",
+    "Job Title",
+    "Department",
+    "Hire Date"
 ]
 
-
-def validate_csv(file_path="employee_data.csv"):
+def validate_excel(file_path):
     try:
-        df = pd.read_csv(file_path)
-
-        print("CSV loaded successfully")
+        df = pd.read_excel(file_path)
+        print(df.columns.tolist())
+        print("Excel file loaded successfully")
         print(f"Rows: {len(df)}")
         print(f"Columns: {len(df.columns)}")
 
@@ -35,7 +32,3 @@ def validate_csv(file_path="employee_data.csv"):
     except Exception as e:
         print(f"Validation Error: {e}")
         return False
-
-
-if __name__ == "__main__":
-    validate_csv()

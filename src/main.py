@@ -1,15 +1,22 @@
-from downloader import download_file
-from validator import validate_csv
+from downloader import download_zip
+from extractor import extract_zip
+from validator import validate_excel
 
 
 def main():
-    print("Starting Employee Data Pipeline...\n")
+    print("Starting Employee ZIP Pipeline...\n")
 
-    if not download_file():
+    if not download_zip():
         print("Download failed")
         return
 
-    if not validate_csv():
+    excel_file = extract_zip()
+
+    if not excel_file:
+        print("Extraction failed")
+        return
+
+    if not validate_excel(excel_file):
         print("Validation failed")
         return
 
